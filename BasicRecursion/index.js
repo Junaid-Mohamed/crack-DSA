@@ -59,3 +59,38 @@ function factorial(i,prod){
 }
 
 factorial(3,1);
+
+// reverse an array.
+
+const arr = [1,2,3,4,5];
+
+function swap(arr,l,r){
+    
+    let temp = arr[l];
+    arr[l] = arr[r];
+    arr[r] = temp;
+}
+
+function reverse(i,arr,n){
+    if(i>=Math.floor(n/2)) return;
+    swap(arr,i,n-i-1);
+    // let temp = arr[i];
+    // arr[i] = arr[n-i-1];
+    // arr[n-i-1] = temp;
+    reverse(i+1,arr,n)
+}
+console.log('Before swap ',arr)
+reverse(0,arr,arr.length);
+console.log('After swap ',arr)
+
+
+//  reverse an string.
+
+function reverseString(i, str){
+    // console.log(str[i])
+    if(i>=Math.floor(str.length/2)) return true;
+    if(str[i] != str[str.length-i-1]) return false;
+    return reverseString(i+1, str);
+}
+
+console.log(reverseString(0, "madem"));
