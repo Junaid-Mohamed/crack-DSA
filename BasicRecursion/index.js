@@ -91,6 +91,36 @@ function reverseString(i, str){
     if(i>=Math.floor(str.length/2)) return true;
     if(str[i] != str[str.length-i-1]) return false;
     return reverseString(i+1, str);
+    // if you don't return, it will not complete, since your not doing any operations but 
+    // just checking the condition and return a boolean, so you'll have to do a return here as well 
 }
 
 console.log(reverseString(0, "madem"));
+
+// fibonacci
+
+//  using for loop.
+
+function fibonacci(n){
+    if(n<=1) return n;
+    let arr = [0,1];
+    for(let i=2;i<=n;i++){
+        arr.push(arr[i-1]+arr[i-2]);
+    }
+    return arr[arr.length-1];
+}
+
+console.log(fibonacci(1))
+console.log(fibonacci(3))
+console.log(fibonacci(4))
+console.log(fibonacci(8))
+console.log(fibonacci(9))
+
+//  using recursion
+
+function fib(n){
+    if(n<=1) return n;
+    return fib(n-1)+fib(n-2);
+}
+
+console.log(fib(8));
