@@ -107,7 +107,8 @@ function fibonacci(n){
     for(let i=2;i<=n;i++){
         arr.push(arr[i-1]+arr[i-2]);
     }
-    return arr[arr.length-1];
+    // return arr[arr.length-1];
+    return arr[n];
 }
 
 console.log(fibonacci(1))
